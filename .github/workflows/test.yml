@@ -17,8 +17,8 @@ on:
 jobs:
   DEV:
     # This workflow contains a single job called "build"
-    name: "step CI"
-    env: dev
+    name: "step CI DEV"
+    environment: dev
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -34,8 +34,8 @@ jobs:
 
   PUBLISH_TO_STAGE:
     # This workflow contains a single job called "build"
-    name: "step CI"
-    env: stage
+    name: "step CI STAGE"
+    environment: stage
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -50,8 +50,8 @@ jobs:
 
   PUBLISH_TO_PRD:
     # This workflow contains a single job called "build"
-    name: "step CI"
-    env: prd
+    name: "step CI PRD"
+    environment: prd
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     needs:
