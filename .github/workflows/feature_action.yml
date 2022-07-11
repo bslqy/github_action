@@ -33,13 +33,12 @@ jobs:
           echo ::set-output name=DESTROY::${destroy}
           echo ::set-output name=ECRBUILD::${ecrBuild}
 
-    - name: Set Image Name
-      id: set_image_name
-      run: echo "::set-output name=image_name::$(echo ${GITHUB_REPOSITORY} | awk  -F / '{print $2}')"
-    - name: Set image tag
-      id: set_image_tag
-      run: echo "::set-output name=image_tag::${GITHUB_SHA::8}"   
-
+      - name: Set Image Name
+        id: set_image_name
+        run: echo "::set-output name=image_name::$(echo ${GITHUB_REPOSITORY} | awk  -F / '{print $2}')"
+      - name: Set image tag
+        id: set_image_tag
+        run: echo "::set-output name=image_tag::${GITHUB_SHA::8}"   
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo dev environment
@@ -49,7 +48,6 @@ jobs:
       ECRBUILD: ${{ steps.vars.outputs.ECRBUILD }}
       IMAGE_NAME: ${{ steps.set_image_name.outputs.image_name }}
       IMAGE_TAG: ${{ steps.set_image_tag.outputs.image_tag }}
-  
 
   PUBLISH_TO_STAGE:
     # This workflow contains a single job called "build"
