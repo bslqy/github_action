@@ -71,6 +71,6 @@ jobs:
           VAR_image_name: ${{ needs.DEV.outputs.IMAGE_NAME}}
           VAR_image_tag: ${{ needs.DEV.outputs.IMAGE_TAG}}
         run: |
-        echo $VAR_image_name
-        echo $VAR_image_tag
+          echo $VAR_image_name
+          echo $VAR_image_tag
 
