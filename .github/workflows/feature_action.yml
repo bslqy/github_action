@@ -35,7 +35,9 @@ jobs:
 
       - name: Set Image Name
         id: set_image_name
-        run: echo "::set-output name=image_name::$(echo ${GITHUB_REPOSITORY} | awk  -F / '{print $2}')"
+        run: |
+          echo "::set-output name=image_name::$(echo ${GITHUB_REPOSITORY} | awk  -F / '{print $2}')"
+          echo ${GITHUB_REPOSITORY}
       - name: Set image tag
         id: set_image_tag
         run: echo "::set-output name=image_tag::${GITHUB_SHA::8}"   
