@@ -30,8 +30,8 @@ jobs:
         id: vars
         shell: bash
         run: |
-        echo ::set-output name=DESTROY::${destroy}
-        echo ::set-output name=ECRBUILD::${ecrBuild}
+          echo ::set-output name=DESTROY::${destroy}
+          echo ::set-output name=ECRBUILD::${ecrBuild}
 
     - name: Set Image Name
       id: set_image_name
