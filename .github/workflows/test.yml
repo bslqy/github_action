@@ -29,7 +29,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo "dev environment"
+        run: echo dev environment
 
 
   PUBLISH_TO_STAGE:
@@ -46,7 +46,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo "stage environment"
+        run: echo stage environment
 
   PUBLISH_TO_PRD:
     # This workflow contains a single job called "build"
@@ -65,5 +65,5 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo "prd environment"
+        run: echo prd environment
 
